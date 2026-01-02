@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancy | Dansın ve Tasarımın Buluşma Noktası</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --black: #0A0A0A;
+            --bordeaux: #800020;
+            --navy: #191970;
+        }
+        body { background-color: var(--black); color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .gold-text { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        .bg-bordeaux { background-color: var(--bordeaux); }
+        .border-gold { border-color: var(--gold); }
+        .card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.2); transition: 0.3s; }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
+    </style>
+</head>
+<body>
+
+    <nav class="p-6 border-b border-gold flex justify-between items-center bg-black sticky top-0 z-50">
+        <h1 class="text-3xl font-bold gold-text tracking-widest">DANCY</h1>
+        <div class="hidden md:flex space-x-8 text-sm uppercase">
+            <a href="#tasarla" class="hover:text-gold">Kostüm Tasarla</a>
+            <a href="#ayakkabi" class="hover:text-gold">Ayakkabı</a>
+            <a href="#ikinciel" class="hover:text-gold">2. El Pazarı</a>
+            <a href="#pratik" class="hover:text-gold">Pratik Giyim</a>
+        </div>
+        <a href="https://wa.me/905XXXXXXXXX" class="bg-gold text-black px-6 py-2 rounded-full font-bold hover:bg-yellow-600">WhatsApp Destek</a>
+    </nav>
+
+    <header class="text-center py-20 px-4 bg-gradient-to-b from-black to-navy">
+        <h2 class="text-5xl md:text-7xl font-extrabold mb-4">Sahne <span class="gold-text">Senin!</span></h2>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Yapay zeka destekli tasarım, usta terziler ve sana özel dans ekipmanları tek bir platformda.</p>
+    </header>
+
+    <main class="container mx-auto px-4 space-y-24 pb-20">
+
+        <section id="tasarla" class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h3 class="text-4xl font-bold gold-text">Hayalindeki Kostümü Tasarla</h3>
+                <p class="text-gray-300">Bir fotoğraf yükle veya tarzını anlat; yapay zekamız kumaş, taş ve işçilik analizi yapsın, terzilerimiz sana özel teklif versin.</p>
+                <div class="p-8 border-2 border-dashed border-gold rounded-xl text-center bg-black/50">
+                    <i class="fas fa-cloud-upload-alt text-4xl mb-4 gold-text"></i>
+                    <p>Fotoğrafı buraya sürükle veya seç</p>
+                    <input type="file" class="hidden" id="fileInput">
+                    <button onclick="document.getElementById('fileInput').click()" class="mt-4 bg-bordeaux text-white px-8 py-3 rounded-lg font-bold">ANALİZ ET & TEKLİF AL</button>
+                </div>
+            </div>
+            <div class="card p-6 rounded-2xl">
+                <h4 class="gold-text font-bold mb-4 italic underline">Yapay Zeka Tahmin Motoru (Demo)</h4>
+                <div class="space-y-4 text-sm">
+                    <div class="flex justify-between border-b border-gray-700 pb-2"><span>Kumaş Zorluğu:</span> <span class="text-green-400">Yüksek</span></div>
+                    <div class="flex justify-between border-b border-gray-700 pb-2"><span>Taş Yoğunluğu:</span> <span class="text-yellow-400">%80 Yoğun</span></div>
+                    <div class="flex justify-between pb-2"><span>Tahmini Fiyat Aralığı:</span> <span class="gold-text font-bold text-lg">4.500 TL - 6.000 TL</span></div>
+                </div>
+                <p class="mt-4 text-xs text-gray-500">* Bu analiz yapay zeka tarafından ön izleme olarak sunulmuştur.</p>
+            </div>
+        </section>
+
+        <section id="ayakkabi">
+            <h3 class="text-4xl font-bold gold-text mb-8">Özel Üretim Ayakkabılar</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card rounded-2xl overflow-hidden">
+                    <div class="h-64 bg-gray-800 flex items-center justify-center">
+                        <i class="fas fa-shoe-prints text-6xl text-gray-600"></i>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h4 class="text-xl font-bold">Pro-Latin Gold Series</h4>
+                        <p class="text-sm text-gray-400 italic font-bold">Kendi Markanız & Özel Ölçü</p>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <input type="number" placeholder="Ayak (cm)" class="bg-black border border-gray-700 p-2 rounded">
+                            <select class="bg-black border border-gray-700 p-2 rounded">
+                                <option>7.5cm Topuk</option>
+                                <option>8.5cm Topuk</option>
+                            </select>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold">3.250 TL</span>
+                            <a href="https://wa.me/905XXXXXXXXX" class="bg-gold text-black px-4 py-2 rounded font-bold text-sm">SİPARİŞ VER</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <section id="ikinciel" class="bg-navy/20 p-10 rounded-3xl border border-navy">
+            <div class="flex justify-between items-center mb-8">
+                <h3 class="text-4xl font-bold gold-text">Dansçıdan Dansçıya</h3>
+                <button class="bg-white text-black px-6 py-2 rounded-full font-bold text-sm">İLAN VER (+0 Komisyon)</button>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="card p-4 rounded-xl text-center">
+                    <div class="w-full h-40 bg-gray-900 rounded-lg mb-4"></div>
+                    <h5 class="font-bold">Salsa Yarışma Kostümü</h5>
+                    <p class="text-gold font-bold">1.800 TL</p>
+                    <button class="mt-2 text-xs underline">Detayları Gör</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="p-10 border-t border-gold text-center text-gray-500 text-sm">
+        <p>&copy; 2026 DANCY - Tüm Hakları Saklıdır. | Şans ve Başarı Seninle Olsun.</p>
+    </footer>
+
+</body>
+</html>
