@@ -3,76 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GLOWSTEPS | Elite Dance & Costume Design</title>
+    <title>GlowSteps | Sen Yarat - AI Dance Design</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --gold: #D4AF37;
-            --black: #0A0A0A;
-            --bordeaux: #800020;
-            --navy: #191970;
-        }
-        body { background-color: var(--black); color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        :root { --gold: #D4AF37; --black: #0A0A0A; --bordeaux: #800020; --navy: #191970; }
+        body { background-color: var(--black); color: white; font-family: 'Inter', sans-serif; display: flex; }
+        .sidebar { width: 260px; height: 100vh; background: #000; border-right: 1px solid var(--gold); position: fixed; left: 0; top: 0; display: flex; flex-direction: column; padding: 2rem; }
+        .content { margin-left: 260px; width: 100%; padding: 3rem; }
         .gold-text { color: var(--gold); }
-        .bg-gold { background-color: var(--gold); }
-        .bg-bordeaux { background-color: var(--bordeaux); }
-        .border-gold { border-color: var(--gold); }
-        .card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 175, 55, 0.2); transition: 0.3s; }
-        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .btn-gold { background: var(--gold); color: black; font-weight: bold; border-radius: 50px; transition: 0.3s; }
+        .btn-gold:hover { transform: scale(1.05); background: #f1c40f; }
+        .card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(212, 175, 55, 0.1); border-radius: 15px; padding: 1.5rem; }
+        .ai-input { background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: white; padding: 1rem; width: 100%; outline: none; }
+        .ai-input:focus { border-color: var(--gold); }
     </style>
 </head>
 <body>
 
-    <nav class="p-6 border-b border-gold flex justify-between items-center bg-black sticky top-0 z-50">
-        <h1 class="text-3xl font-bold gold-text tracking-widest uppercase">GLOWSTEPS</h1>
-        <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest">
-            <a href="#design" class="hover:text-gold">Custom Design</a>
-            <a href="#shoes" class="hover:text-gold">Shoes</a>
-            <a href="#marketplace" class="hover:text-gold">Marketplace</a>
-            <a href="#practice" class="hover:text-gold">Practice Wear</a>
-        </div>
-        <a href="https://wa.me/905XXXXXXXXX" class="bg-gold text-black px-6 py-2 rounded-full font-bold hover:bg-yellow-600 uppercase text-xs">Contact Support</a>
-    </nav>
-
-    <header class="text-center py-24 px-4 bg-gradient-to-b from-black to-navy">
-        <h2 class="text-5xl md:text-8xl font-extrabold mb-4 uppercase tracking-tighter text-white">GLOW <span class="gold-text">STEPS</span></h2>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto italic tracking-wide font-light">Precision in every movement. Luxury in every stitch.</p>
-    </header>
-
-    <main class="container mx-auto px-4 space-y-24 pb-20">
-
-        <section id="design" class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6">
-                <h3 class="text-4xl font-bold gold-text uppercase">Custom Design Atelier</h3>
-                <p class="text-gray-300 font-light">Transform your vision into reality. Upload your inspiration, and let our AI analyze the craftsmanship while master tailors bring it to life.</p>
-                <div class="p-8 border-2 border-dashed border-gold rounded-xl text-center bg-black/50 hover:bg-black/80 transition cursor-pointer">
-                    <i class="fas fa-magic text-4xl mb-4 gold-text"></i>
-                    <p class="uppercase text-xs tracking-widest">Drop your design here for AI Analysis</p>
-                    <input type="file" class="hidden" id="fileInput">
-                    <button onclick="document.getElementById('fileInput').click()" class="mt-4 bg-bordeaux text-white px-8 py-3 rounded-lg font-bold uppercase text-sm tracking-widest hover:scale-105 transition">Start Analysis</button>
-                </div>
+    <aside class="sidebar">
+        <h1 class="text-3xl font-black gold-text mb-12 tracking-tighter">GLOWSTEPS</h1>
+        <nav class="space-y-6 text-sm uppercase tracking-widest">
+            <a href="#" class="block gold-text font-bold"><i class="fas fa-magic mr-3"></i> Sen Yarat</a>
+            <a href="#" class="block hover:text-gold text-gray-400"><i class="fas fa-shoe-prints mr-3"></i> Shoes</a>
+            <a href="#" class="block hover:text-gold text-gray-400"><i class="fas fa-shopping-bag mr-3"></i> Market</a>
+            <div class="pt-10 space-y-4">
+                <button class="w-full btn-gold py-2 text-[10px]">MÜŞTERİ ÜYE OL</button>
+                <button class="w-full border border-gray-600 py-2 rounded-full text-[10px] hover:border-gold transition">TERZİ ÜYE OL</button>
             </div>
-            <div class="card p-6 rounded-2xl">
-                <h4 class="gold-text font-bold mb-4 italic underline uppercase">GlowSteps AI Report</h4>
-                <div class="space-y-4 text-sm">
-                    <div class="flex justify-between border-b border-gray-700 pb-2 font-light"><span>Fabric Type:</span> <span class="text-blue-400 font-bold uppercase">Pro-Stretch Lycra</span></div>
-                    <div class="flex justify-between border-b border-gray-700 pb-2 font-light"><span>Detailing:</span> <span class="text-yellow-400 font-bold uppercase">High-Density Crystal Work</span></div>
-                    <div class="flex justify-between pb-2 font-light"><span>Estimated Value:</span> <span class="gold-text font-bold text-lg">$280 - $490</span></div>
-                </div>
-                <p class="mt-4 text-[10px] text-gray-500 uppercase font-bold">* Automated estimation for GlowSteps exclusive projects.</p>
-            </div>
-        </section>
+        </nav>
+    </aside>
 
-        <section id="shoes">
-            <h3 class="text-4xl font-bold gold-text mb-8 uppercase">Elite Footwear</h3>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="card rounded-2xl overflow-hidden">
-                    <div class="h-64 bg-gray-800 flex items-center justify-center">
-                        <i class="fas fa-gem text-6xl text-gold opacity-30"></i>
+    <main class="content">
+        
+        <header class="mb-12">
+            <h2 class="text-5xl font-extrabold mb-2 uppercase">Sen <span class="gold-text">Yarat</span></h2>
+            <p class="text-gray-500 italic">Hayalindeki tasarımı anlat, yapay zeka çizsin, ustalar diksin.</p>
+        </header>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-2 space-y-8">
+                <div class="card space-y-6">
+                    <div>
+                        <label class="block mb-2 text-xs uppercase gold-text font-bold">1. Örnek Görseller (İlham Al / Alınma)</label>
+                        <div class="flex gap-4">
+                            <div class="flex-1 border-2 border-dashed border-gray-700 rounded-lg p-6 text-center hover:border-green-500 transition cursor-pointer">
+                                <i class="fas fa-plus-circle mb-2 text-green-500"></i>
+                                <p class="text-[10px]">BEĞENDİĞİN GÖRSEL</p>
+                            </div>
+                            <div class="flex-1 border-2 border-dashed border-gray-700 rounded-lg p-6 text-center hover:border-red-500 transition cursor-pointer">
+                                <i class="fas fa-minus-circle mb-2 text-red-500"></i>
+                                <p class="text-[10px]">BEĞENMEDİĞİN GÖRSEL</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-6 space-y-4">
-                        <h4 class="text-xl font-bold uppercase tracking-widest">GlowSteps Pro-Latin</h4>
-                        <p class="text-sm text-gray-400 font-light">Bespoke measurements, handcrafted for world-class dancers.</p>
-                        <div class="grid grid-cols-2 gap-2 text-xs font-light">
-                            <input type="number" placeholder="Length (cm)" class="bg-black border border-gray-700 p-2 rounded text-white outline-none focus:border-gold">
+
+                    <div>
+                        <label class="block mb-2 text-xs uppercase gold-text font-bold">2. Tasarım Promptu (Yapay Zekaya Anlat)</label>
+                        <textarea class="ai-input h-32" placeholder="Örn: Siyah kadife üzerine omuzlardan dökülen gold Swarovski taşlı, derin sırt dekolteli bir latin elbisesi..."></textarea>
+                    </div>
+
+                    <div class="flex justify-between items-center bg-black/40 p-4 rounded-lg">
+                        <div>
+                            <span class="text-xs text-gray-500 block uppercase">AI Tahmini Başlangıç Fiyatı</span>
+                            <span class="text-2xl font-bold gold-text">$240.00</span>
+                        </div>
+                        <button onclick="alert('Teklif talebiniz tüm kayıtlı terzilere iletildi!')" class="btn-gold px-10 py-4 uppercase text-sm">Teklif Al & İhale Başlat</button>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-bold mb-6 uppercase tracking-widest border-b border-gold inline-block pb-1">Hazır Koleksiyon</h3>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="card p-0 overflow-hidden relative group">
+                            <div class="h-48 bg-gray-900 flex items-center justify-center text-xs text-gray-600 italic">AI Design #1</div>
+                            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center">
+                                <button class="btn-gold px-4 py-1 text-[10px]">BU TASARIMI SEÇ</button>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold uppercase tracking-widest border-b border-gold inline-block pb-1">Usta Terziler</h3>
+                
+                <div class="card text-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <span class="font-bold text-lg">Mehmet A.</span> 
+                            <span class="text-[10px] text-gray-500 ml-2 italic">İstanbul</span>
+                        </div>
+                        <div class="text-yellow-500 text-xs">
+                            <i class="fas fa-star"></i> 4.9 <span class="text-gray-500">(128 yorum)</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-xs mb-4">"25 yıllık sahne kostümü tecrübesiyle hayalinizi dikiyoruz."</p>
+                    <button class="text-[10px] gold-text font-bold uppercase underline">İşlerini Gör</button>
+                </div>
+
+                <div class="card text-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <span class="font-bold text-lg">Ayşe K.</span> 
+                            <span class="text-[10px] text-gray-500 ml-2 italic">Ankara</span>
+                        </div>
+                        <div class="text-yellow-500 text-xs">
+                            <i class="fas fa-star"></i> 5.0 <span class="text-gray-500">(45 yorum)</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-xs mb-4">"Latin kostümlerinde taş işçiliği uzmanlığı."</p>
+                    <button class="text-[10px] gold-text font-bold uppercase underline">İşlerini Gör</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // İleride buraya Yapay Zeka (Gemini API) bağlayacağız.
+    </script>
+</body>
+</html>
